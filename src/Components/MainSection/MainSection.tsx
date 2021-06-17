@@ -1,14 +1,16 @@
 import React from 'react'; 
 import OfferCarousal from '../OfferCarousal/OfferCarousal'; 
 import Header from '../Header/Header'; 
-import { useStyles } from './MainSectionStyles' 
-import Nav from '../Navbar/Navbar' 
+import { useStyles } from './MainSectionStyles'; 
+import Nav from '../Navbar/Navbar';
+import Categories from '../CategoryGrid/Categories'
+
  
 export default function MainSection() { 
-    const classes = useStyles(); 
+    const classes = useStyles();
     return ( 
         <React.Fragment> 
-            <Nav /> 
+            <Nav/> 
             <div style={{ height: '2000px', overflowX: 'hidden' }}> 
                 <Header /> 
                 <div className={classes.raised}> 
@@ -18,7 +20,8 @@ export default function MainSection() {
                                 <h2>Special Offers</h2> 
                             </div> 
                         </div> 
-                        <OfferCarousal /> 
+                        <OfferCarousal />
+                        <Categories/>
                     </div> 
                 </div> 
             </div> 

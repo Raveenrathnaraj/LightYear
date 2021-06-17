@@ -49,7 +49,7 @@ const primaryCardHeader = {
  
 const cardStyle = { 
     cardBody: { 
-        padding: "0.9375rem 1.875rem", 
+        padding: "1rem 1rem",
         flex: "1 1 auto", 
     }, 
     cardFooter: { 
