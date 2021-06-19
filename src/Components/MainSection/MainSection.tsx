@@ -3,13 +3,14 @@ import OfferCarousal from '../OfferCarousal/OfferCarousal';
 import Header from '../Header/Header'; 
 import { useStyles } from './MainSectionStyles'; 
 import Nav from '../Navbar/Navbar';
-import Categories from '../CategoryGrid/Categories'
+import Categories from '../SelectionGrid/Categories'
+import HotelList from '../FoodPage/HotelList';
 
  
 export default function MainSection() { 
     const classes = useStyles();
     return ( 
-        <React.Fragment> 
+        <React.Fragment>
             <Nav/> 
             <div style={{ height: '2000px', overflowX: 'hidden' }}> 
                 <Header /> 

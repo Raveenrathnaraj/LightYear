@@ -12,7 +12,7 @@ import AddressForm from './AddressForm';
 import PaymentForm from './PaymentForm'; 
 import Review from './Review'; 
 import { container } from '../Helpers/container'; 
-import { Header } from '../Navbar/Navbar'; 
+import { Navbar } from '../Navbar/Navbar'; 
  
  
 function Copyright() { 
@@ -111,11 +111,11 @@ export default function Checkout() {
  
     return ( 
         <React.Fragment> 
-            <Header 
+            <Navbar 
                 absolute 
                 color="white" 
-                brand="Material Kit React" 
-                //rightLinks={<HeaderLinks />} 
+                brand="LightYear" 
+                //rightLinks={<NavbarLinks />} 
             /> 
             <div className={classes.container}> 
                 <CssBaseline /> 

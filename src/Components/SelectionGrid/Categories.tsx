@@ -4,8 +4,8 @@ import foodpic1 from '../../assets/FoodHeader1.jpg'
 import foodpic2 from '../../assets/FoodHeader2.jpg'
 import foodpic3 from '../../assets/FoodHeader3.jpg'
 import { Grid } from "@material-ui/core";
-import FastfoodIcon from '@material-ui/icons/Fastfood';
-import SelectionGrid from "../SelectionGrid/SelectionGrid";
+import SelectionGrid from "./SelectionGrid";
+import { LocalGroceryStore, Fastfood, Weekend } from "@material-ui/icons";
 
 export default function Categories() {
     return (
@@ -13,8 +13,8 @@ export default function Categories() {
             <Grid container>
                 <SelectionGrid
                     heading='Taste the best food in your city'
-                    category='Food'
-                    icon={<FastfoodIcon fontSize='large' />}
+                    category='Food '
+                    icon={<Fastfood />}
                     link='/food'
                     pic1={foodpic}
                     pic2={foodpic1}
@@ -23,9 +23,9 @@ export default function Categories() {
                 />
                 <SelectionGrid
                     heading='Taste the best food in your city'
-                    category='Food'
-                    icon={<FastfoodIcon fontSize='large' />}
-                    link='/food'
+                    category='Groceries '
+                    icon={<LocalGroceryStore style = {{transform: 'translateY(5px)'}} />}
+                    link='/groceries'
                     pic1={foodpic}
                     pic2={foodpic1}
                     pic3={foodpic2}
@@ -35,9 +35,9 @@ export default function Categories() {
             <Grid container>
                 <SelectionGrid
                     heading='Taste the best food in your city'
-                    category='Food'
-                    icon={<FastfoodIcon fontSize='large' />}
-                    link='/food'
+                    category='Home Appliances '
+                    icon={<Fastfood fontSize='large' />}
+                    link='/homeappliances'
                     pic1={foodpic}
                     pic2={foodpic1}
                     pic3={foodpic2}
@@ -45,9 +45,9 @@ export default function Categories() {
                 />
                 <SelectionGrid
                     heading='Taste the best food in your city'
-                    category='Food'
-                    icon={<FastfoodIcon fontSize='large' />}
-                    link='/food'
+                    category= 'Furnitures '
+                    icon={<Weekend fontSize='large' style = {{transform: 'translateY(10px)'}}/>}
+                    link='/furnitures'
                     pic1={foodpic}
                     pic2={foodpic1}
                     pic3={foodpic2}

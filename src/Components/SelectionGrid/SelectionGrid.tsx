@@ -5,6 +5,7 @@ import Card from "../Helpers/Card/Card";
 import CardHeader from "../Helpers/Card/CardHeader";
 import CardBody from "../Helpers/Card/CardBody";
 import { Link } from "react-router-dom";
+import { ArrowForwardIos } from "@material-ui/icons";
 
 const useStyles = makeStyles({
         "& h2": {
@@ -38,18 +39,23 @@ const useStyles = makeStyles({
             '&:hover': {
                 transform: 'scale(1.05)'
             }
+        },
+        CardHeader: {
+            verticalAlign: 'center'
         }
 })
 
 export default function SelectionGrid (props:SelectionGridProps) {
     const classes = useStyles();
     return(
-            <Grid item direction='row' sm={6} xs={12} className={classes.style}>
+            <Grid item sm={6} xs={12} className={classes.style}>
                 <h2>{props.heading}</h2>
-                <Link to='#' className={classes.link}>
-                    <Card className={classes.category}>
-                        <CardHeader>
-                            <h3>{props.category}{props.icon}</h3>
+                <Link to= {props.link} className={classes.link}>
+                    <Card className={classes.category} >
+                        <CardHeader className = {classes.CardHeader}>
+                            <span style = {{display: 'inline', fontSize: "1.2rem"}} >{props.category}</span>
+                            {props.icon} 
+                            <span style = {{marginLeft : "5%"}}> <ArrowForwardIos/> </span>
                         </CardHeader>
                         <CardBody>
                             <Grid>

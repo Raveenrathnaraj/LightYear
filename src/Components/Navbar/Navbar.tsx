@@ -2,16 +2,16 @@ import React from 'react';
 import classNames from "classnames"; 
 import {AppBar, Toolbar, IconButton, Button, Hidden, Drawer } from "@material-ui/core"; 
 import Menu from "@material-ui/icons/Menu"; 
-import {useStyles} from './NavbarStyles' 
-import Login from '../Login/LoginModal' 
+import {useStyles} from './NavbarStyles'
+import Login from '../Login/LoginModal'
  
  
 type colors = 'white' | 'transparent' |'rose' | 'info' | 'success' | 'danger' | 'warning' | 'primary' 
  
  
-export default function Nav() { 
+export default function Nav() {
     return ( 
-        <Header 
+        <Navbar 
             brand="LightYear" 
             rightLinks={<Login/>} 
             fixed 
@@ -20,12 +20,12 @@ export default function Nav() {
                 height: 400, 
                 color: "white", 
             }} 
-        /> 
+        />
     ); 
 } 
  
  
-export function Header(props: any) { 
+export function Navbar(props: any) { 
     const classes = useStyles(); 
     const [mobileOpen, setMobileOpen] = React.useState(false); 
     React.useEffect(() => { 
@@ -70,7 +70,7 @@ export function Header(props: any) {
         [classes.absolute]: absolute, 
         [classes.fixed]: fixed, 
     }); 
-    const brandComponent = <Button className={classes.title}>{brand}</Button>; 
+    const brandComponent = <Button className={classes.title} href = {'/'}>{brand}</Button>; 
     return ( 
         <AppBar className={appBarClasses}> 
             <Toolbar className={classes.container}> 
@@ -116,8 +116,3 @@ export function Header(props: any) {
         </AppBar> 
     ); 
 } 
- 
- 
-Header.defaultProp = { 
-    color: "white", 
-}; 
