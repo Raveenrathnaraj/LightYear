@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Route, Switch } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import { Navbar } from "../Navbar/Navbar";
@@ -18,10 +17,6 @@ export default function FoodPage() {
     window.scroll({
         top: 0
     });
-
-    useEffect(() => {
-
-    }, [])
 
     return (
         <FoodCart>

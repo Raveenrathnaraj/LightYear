@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import { Button } from "@material-ui/core";
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
-import Modal from '@material-ui/core/Modal';
-import Backdrop from '@material-ui/core/Backdrop';
-import Fade from '@material-ui/core/Fade';
 import CartModal from "./CartModal";
+import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@material-ui/core';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
@@ -21,9 +19,7 @@ const useStyles = makeStyles((theme: Theme) =>
             margin: '1%',
         },
         modal: {
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
+
         },
         paper: {
             backgroundColor: theme.palette.background.paper,
@@ -41,31 +37,54 @@ export default function StickyFooter() {
     const classes = useStyles();
     const [modal, setModal] = useState(false)
 
+    const descriptionElementRef = React.useRef<HTMLElement>(null);
+    React.useEffect(() => {
+        if (modal) {
+            const { current: descriptionElement } = descriptionElementRef;
+            if (descriptionElement !== null) {
+                descriptionElement.focus();
+            }
+        }
+    }, [modal]);
+
     return (
         <React.Fragment>
             <div className={classes.style}>
                 <Button variant="contained" color="primary" className={classes.button} onClick={() => setModal(true)}>
                     Review and Place Order
                 </Button>
+                <Dialog
+                    open={modal}
+                    onClose={() => setModal(false)}
+                    scroll={'paper'}
+                    aria-labelledby="scroll-dialog-title"
+                    aria-describedby="scroll-dialog-description"
+                    PaperProps={{
+                        style: {
+                            margin: '2%'
+                        },
+                    }}
+                >
+                    <DialogTitle id="scroll-dialog-title">Food Cart</DialogTitle>
+                    <DialogContent dividers >
+                        <DialogContentText
+                            id="scroll-dialog-description"
+                            ref={descriptionElementRef}
+                            tabIndex={-1}
+                        >
+                            <CartModal />
+                        </DialogContentText>
+                    </DialogContent>
+                    <DialogActions>
+                        <Button onClick={() => setModal(false)} color="primary">
+                            Back
+                        </Button>
+                        <Button onClick={() => setModal(false)} color="primary">
+                            Confirm
+                        </Button>
+                    </DialogActions>
+                </Dialog>
             </div>
-            <Modal
-                aria-labelledby="transition-modal-title"
-                aria-describedby="transition-modal-description"
-                className={classes.modal}
-                open={modal}
-                onClose={() => setModal(false)}
-                closeAfterTransition
-                BackdropComponent={Backdrop}
-                BackdropProps={{
-                    timeout: 500,
-                }}
-            >
-                <Fade in={modal}>
-                    <div className={classes.paper}>
-                        <CartModal />
-                    </div>
-                </Fade>
-            </Modal>
         </React.Fragment>
     );
 }
