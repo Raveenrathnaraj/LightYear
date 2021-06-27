@@ -1,5 +1,4 @@
-import { any } from 'prop-types';
-import React, { useState, createContext } from 'react';
+import { useState, createContext } from 'react';
 import { FoodCartItem, IFoodCart } from './Interface';
 
 interface FoodContextType {

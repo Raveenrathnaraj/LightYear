@@ -1,12 +1,12 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { Button } from "@material-ui/core";
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
-import CartModal from "../CartModal/CartModal";
+import CartModal from "./CartModal";
 
-const useStyles = makeStyles((theme: Theme) => 
+const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         style: {
             position: 'fixed',
@@ -15,7 +15,6 @@ const useStyles = makeStyles((theme: Theme) =>
             width: '100%',
             color: 'white',
             textAlign: 'center',
-            
         },
         button: {
             borderRadius: "30px",
@@ -25,13 +24,12 @@ const useStyles = makeStyles((theme: Theme) =>
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            overflow: 'scroll'
         },
         paper: {
             backgroundColor: theme.palette.background.paper,
             border: '2px solid #000',
             boxShadow: theme.shadows[5],
-            padding: theme.spacing(2, 4, 3),
+            padding: '16px',
             "@media (max-height: 450px)": {
                 marginTop: '30%'
             }
@@ -41,7 +39,7 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export default function StickyFooter() {
     const classes = useStyles();
-    const [modal,setModal] = useState(false)
+    const [modal, setModal] = useState(false)
 
     return (
         <React.Fragment>

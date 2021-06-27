@@ -1,5 +1,3 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -7,17 +5,11 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper'; import { useContext } from 'react';
-import { foodCartContext } from "../FoodPage/FoodCart";
+import { foodCartContext } from "./FoodCart";
 
 
 
 const TAX_RATE = 0.07;
-
-const useStyles = makeStyles({
-    table: {
-        minWidth: 700,
-    },
-});
 
 function ccyFormat(num: number) {
     return `${num.toFixed(2)}`;
@@ -43,13 +35,8 @@ function subtotal(items: Row[]) {
     return items.map(({ price }) => price).reduce((sum, i) => sum + i, 0);
 }
 
-
-
-
-
 export default function SpanningTable() {
-    const classes = useStyles();
-    const { cart, modifyCart } = useContext(foodCartContext)
+    const { cart } = useContext(foodCartContext)
     const rows = cart.foodItems.map(food => createRow(food.name, food.qty, food.price))
     const invoiceSubtotal = subtotal(rows);
     const invoiceTaxes = TAX_RATE * invoiceSubtotal;

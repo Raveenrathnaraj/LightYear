@@ -1,9 +1,8 @@
-import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Grid } from "@material-ui/core";
-import Card from "../Helpers/Card/Card";
-import CardHeader from "../Helpers/Card/CardHeader";
-import CardBody from "../Helpers/Card/CardBody";
+import Card from "../../Helpers/Card/Card";
+import CardHeader from "../../Helpers/Card/CardHeader";
+import CardBody from "../../Helpers/Card/CardBody";
 import { Link } from "react-router-dom";
 import { ArrowForwardIos } from "@material-ui/icons";
 
@@ -60,18 +59,18 @@ export default function SelectionGrid (props:SelectionGridProps) {
                         <CardBody>
                             <Grid>
                                 <span className={classes.images}>
-                                    <img src={props.pic1} className={classes.img} />
+                                    <img alt = 'Category' src={props.pic1} className={classes.img} />
                                 </span>
                                 <span className={classes.images}>
-                                    <img src={props.pic2} className={classes.img} />
+                                    <img alt = 'Category' src={props.pic2} className={classes.img} />
                                 </span>
                             </Grid>
                             <Grid>
                                 <span className={classes.images}>
-                                    <img src={props.pic3} className={classes.img} />
+                                    <img alt = 'Category' src={props.pic3} className={classes.img} />
                                 </span>
                                 <span className={classes.images}>
-                                    <img src={props.pic4} className={classes.img} />
+                                    <img alt = 'Category' src={props.pic4} className={classes.img} />
                                 </span>
                             </Grid>
                         </CardBody>

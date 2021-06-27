@@ -1,8 +1,8 @@
 import React from "react";
-import foodpic from '../../assets/FoodHeader.jpg'
-import foodpic1 from '../../assets/FoodHeader1.jpg'
-import foodpic2 from '../../assets/FoodHeader2.jpg'
-import foodpic3 from '../../assets/FoodHeader3.jpg'
+import foodpic from '../../../assets/FoodHeader.jpg'
+import foodpic1 from '../../../assets/FoodHeader1.jpg'
+import foodpic2 from '../../../assets/FoodHeader2.jpg'
+import foodpic3 from '../../../assets/FoodHeader3.jpg'
 import { Grid } from "@material-ui/core";
 import SelectionGrid from "./SelectionGrid";
 import { LocalGroceryStore, Fastfood, Weekend } from "@material-ui/icons";

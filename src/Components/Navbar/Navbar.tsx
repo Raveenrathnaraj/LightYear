@@ -3,28 +3,10 @@ import classNames from "classnames";
 import {AppBar, Toolbar, IconButton, Button, Hidden, Drawer } from "@material-ui/core"; 
 import Menu from "@material-ui/icons/Menu"; 
 import {useStyles} from './NavbarStyles'
-import Login from '../Login/LoginModal'
  
  
 type colors = 'white' | 'transparent' |'rose' | 'info' | 'success' | 'danger' | 'warning' | 'primary' 
- 
- 
-export default function Nav() {
-    return ( 
-        <Navbar 
-            brand="LightYear" 
-            rightLinks={<Login/>} 
-            fixed 
-            color="transparent" 
-            changeColorOnScroll={{ 
-                height: 400, 
-                color: "white", 
-            }} 
-        />
-    ); 
-} 
- 
- 
+
 export function Navbar(props: any) { 
     const classes = useStyles(); 
     const [mobileOpen, setMobileOpen] = React.useState(false); 

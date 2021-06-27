@@ -1,15 +1,9 @@
-import React, {useContext} from "react";
+import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "../Helpers/Card/Card";
 import CardHeader from "../Helpers/Card/CardHeader";
 import CardBody from "../Helpers/Card/CardBody";
 import FoodTable from "./FoodTable";
-
-const foodList = [
-    { id: 1, name: 'Rice', price: 30 },
-    { id: 2, name: 'Parota', price: 10 },
-    { id: 3, name: 'FriedRice', price: 50 }
-]
 
 const useStyles = makeStyles({
     cardHeader: {
@@ -19,10 +13,10 @@ const useStyles = makeStyles({
     cardBody: {
         "@media (max-width: 300px)": {
             padding: '0px'
-          },
-          "@media (min-width: 700px)": {
+        },
+        "@media (min-width: 700px)": {
             padding: '0 10%'
-          }, 
+        },
     },
     qtyBox: {
         marginBottom: '3rem'
@@ -38,7 +32,7 @@ export default function FoodList() {
                     FoodList Page
                 </CardHeader>
                 <CardBody className={classes.cardBody}>
-                    <FoodTable/>
+                    <FoodTable />
                 </CardBody>
             </Card>
         </React.Fragment>
