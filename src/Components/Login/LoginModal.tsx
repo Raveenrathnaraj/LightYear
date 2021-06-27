@@ -19,7 +19,7 @@ function LoginModal(props:any) {
         classes={{ 
           root: classes.center, 
           paper: classes.modal, 
-        }} 
+        }}
         open={modalShow} 
         TransitionComponent={Slide} 
         keepMounted 
@@ -50,7 +50,7 @@ function LoginModal(props:any) {
         </DialogContent> 
       </Dialog> 
     </div> 
-  ); 
+  );
 } 
  
  

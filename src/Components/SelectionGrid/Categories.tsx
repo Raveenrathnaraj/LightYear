@@ -14,7 +14,7 @@ export default function Categories() {
                 <SelectionGrid
                     heading='Taste the best food in your city'
                     category='Food '
-                    icon={<Fastfood />}
+                    icon={<Fastfood fontSize='large'/>}
                     link='/food'
                     pic1={foodpic}
                     pic2={foodpic1}

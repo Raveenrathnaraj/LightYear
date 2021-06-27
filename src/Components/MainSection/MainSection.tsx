@@ -4,7 +4,6 @@ import Header from '../Header/Header';
 import { useStyles } from './MainSectionStyles'; 
 import Nav from '../Navbar/Navbar';
 import Categories from '../SelectionGrid/Categories'
-import HotelList from '../FoodPage/HotelList';
 
  
 export default function MainSection() { 
@@ -28,5 +27,5 @@ export default function MainSection() {
             </div> 
         </React.Fragment> 
     ) 
-} 
+}
  
